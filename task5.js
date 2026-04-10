@@ -101,22 +101,22 @@ console.log(`${userName} lives in ${city} - ${pincode}`);
 
 let users = ["A", "B", "C", "D", "E"];
 
-// 👉 1. Remove "C" and "D" & add "X", "Y" in same place
+//  1. Remove "C" and "D" & add "X", "Y" in same place
 users.splice(2, 2, "X", "Y");  
 // index 2 → start at "C"
 // remove 2 items → "C", "D"
 // add "X", "Y"
 
-// 👉 2. Get first 3 users using slice
+//  2. Get first 3 users using slice
 let firstThree = users.slice(0, 3);
 
-// 👉 3. Check if "B" exists
+//  3. Check if "B" exists
 let hasB = users.includes("B");
 
-// 👉 4. Find index of "E"
+//  4. Find index of "E"
 let indexE = users.indexOf("E");
 
-// 👉 Output
+//  Output
 console.log("Updated Users:", users);
 console.log("First 3 Users:", firstThree);
 console.log("Is B present?", hasB);
@@ -127,13 +127,13 @@ console.log("Index of E:", indexE);
 
 let messyData = [1, 2, [3, 4, [5]], null, undefined, "hello"];
 
-// 👉 1. Flatten the array (deep flatten)
+//  1. Flatten the array (deep flatten)
 let flatData = messyData.flat(Infinity);
 
-// 👉 2. Remove null and undefined
+//  2. Remove null and undefined
 let cleanData = flatData.filter(item => item != null);
 
-// 👉 Output
+//  Output
 console.log("Clean Array:", cleanData);
 
 
@@ -141,7 +141,7 @@ console.log("Clean Array:", cleanData);
 
 let prices = [1000, 200, 50, 5000];
 
-// 👉 Ascending sort
+//  Ascending sort
 prices.sort((a, b) => a - b);
 
 console.log(prices);
@@ -154,13 +154,13 @@ let orders = [
   { id: 3, amount: 300 }
 ];
 
-// 👉 1. Total revenue
+//  1. Total revenue
 let totalRevenue = orders.reduce((sum, order) => sum + order.amount, 0);
 
-// 👉 2. Average order value
+//  2. Average order value
 let average = totalRevenue / orders.length;
 
-// 👉 Output
+//  Output
 console.log("Total Revenue:", totalRevenue);
 console.log("Average Order Value:", average);
 
@@ -169,15 +169,15 @@ console.log("Average Order Value:", average);
 let inventory1 = ["Shirt", "Shoes", "Watch"];
 let inventory2 = ["Bag", "Cap"];
 
-// 👉 1. Add items
+//  1. Add items
 inventory1.push("Belt");
 console.log("After Add:", inventory1);
 
-// 👉 2. Remove last item
+//  2. Remove last item
 inventory1.pop();
 console.log("After Remove:", inventory1);
 
-// 👉 3. Update item using splice
+//  3. Update item using splice
 // Replace "Shoes" with "Sneakers"
 let index = inventory1.indexOf("Shoes");
 if (index !== -1) {
@@ -185,30 +185,30 @@ if (index !== -1) {
 }
 console.log("After Update:", inventory1);
 
-// 👉 4. Search item using includes
+//  4. Search item using includes
 let hasWatch = inventory1.includes("Watch");
 console.log("Is Watch available?", hasWatch);
 
-// 👉 5. Merge inventories using spread
+//  5. Merge inventories using spread
 let finalInventory = [...inventory1, ...inventory2];
 console.log("Final Inventory:", finalInventory);
 
 // Task 10: Interview Level Challenge
 
 function processData(...data) {
-  // 👉 1. Flatten all values
+  //  1. Flatten all values
   let flatData = data.flat(Infinity);
 
-  // 👉 2. Remove duplicates (using Set)
+  // 2. Remove duplicates (using Set)
   let uniqueData = [...new Set(flatData)];
 
-  // 👉 3. Sort ascending
+  //  3. Sort ascending
   let sortedData = uniqueData.sort((a, b) => a - b);
 
-  // 👉 4. Return final result
+  //  4. Return final result
   return sortedData;
 }
 
-// 👉 Example call
+// Example call
 let result = processData(1, 2, [3, 4], [5, [6]]);
 console.log(result);
