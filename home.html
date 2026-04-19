@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Product Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>🛍 Product Dashboard</h1>
+
+    <!-- Controls -->
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search products..." />
+
+      <select id="category">
+        <option value="all">All Categories</option>
+        <option value="electronics">Electronics</option>
+        <option value="jewelery">Jewelery</option>
+        <option value="men's clothing">Men</option>
+        <option value="women's clothing">Women</option>
+      </select>
+
+      <button id="lowToHigh">Price ↑</button>
+      <button id="highToLow">Price ↓</button>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader">Loading...</div>
+
+    <!-- Product Container -->
+    <div id="product-container"></div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span id="close">&times;</span>
+        <img id="modal-img" />
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+        <p id="modal-price"></p>
+      </div>
+    </div>
+
+    <script src="./js/final.js"></script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+/* ===== BODY ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff7f0;
+}
+
+/* ===== TITLE ===== */
+h1 {
+    text-align: center;
+    padding: 20px;
+    color: #ff6f00;
+}
+
+/* ===== CONTROLS ===== */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.controls input,
+.controls select,
+.controls button {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ffb74d;
+}
+
+.controls button {
+    background: #ff9800;
+    color: white;
+    cursor: pointer;
+}
+
+/* ===== GRID ===== */
+#product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 20px;
+    gap: 20px;
+}
+
+/* ===== CARD ===== */
+.product {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+/* ===== IMAGE ===== */
+.product img {
+    height: 150px;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+/* ===== LOADER ===== */
+#loader {
+    text-align: center;
+    font-size: 18px;
+    color: #ff6f00;
+}
+
+/* ===== ERROR ===== */
+.error {
+    color: red;
+    text-align: center;
+}
+
+/* ===== MODAL (PERFECT CENTER FIX) ===== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* hide initially */
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+/* ACTIVE MODAL */
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== MODAL CONTENT ===== */
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 320px;
+    max-width: 90%;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+
+    transform: scale(0.8);
+    transition: 0.3s;
+}
+
+/* POP ANIMATION */
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+/* CLOSE BUTTON */
+#close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* MODAL IMAGE */
+.modal-content img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
