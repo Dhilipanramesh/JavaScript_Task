@@ -6,13 +6,13 @@ const categorySelect = document.getElementById("category");
 const lowBtn = document.getElementById("lowToHigh");
 const highBtn = document.getElementById("highToLow");
 
-/* Modal */
+// Modal
 const modal = document.getElementById("modal");
 const closeBtn = document.getElementById("close");
 
 let products = [];
 
-/* ===== FETCH DATA (2s LOADER) ===== */
+// FETCH DATA (2s LOADER) 
 async function fetchData() {
   loader.style.display = "block";
 
@@ -38,7 +38,7 @@ async function fetchData() {
   }
 }
 
-/* ===== DISPLAY ===== */
+//DISPLAY 
 function displayProducts(data) {
   container.innerHTML = "";
 
@@ -55,33 +55,33 @@ function displayProducts(data) {
       <button class="btn view">View More</button>
     `;
 
-    /* VIEW MORE */
+  // VIEW MORE
     div.querySelector(".view").addEventListener("click", () => {
       document.getElementById("modal-img").src = item.image;
       document.getElementById("modal-title").innerText = item.title;
       document.getElementById("modal-desc").innerText = item.description;
       document.getElementById("modal-price").innerText = "₹ " + item.price;
 
-      modal.classList.add("active"); // ✅ center + show
+      modal.classList.add("active");
     });
 
     container.appendChild(div);
   });
 }
 
-/* CLOSE MODAL */
+// CLOSE MODAL
 closeBtn.onclick = () => {
   modal.classList.remove("active");
 };
 
-/* CLICK OUTSIDE TO CLOSE */
+// CLICK OUTSIDE TO CLOSE
 window.onclick = (e) => {
   if (e.target === modal) {
     modal.classList.remove("active");
   }
 };
 
-/* SEARCH */
+// SEARCH
 searchInput.addEventListener("input", () => {
   const val = searchInput.value.toLowerCase();
   const filtered = products.filter(p =>
@@ -90,7 +90,7 @@ searchInput.addEventListener("input", () => {
   displayProducts(filtered);
 });
 
-/* CATEGORY */
+//CATEGORY
 categorySelect.addEventListener("change", () => {
   const val = categorySelect.value;
   const filtered = val === "all"
@@ -99,7 +99,7 @@ categorySelect.addEventListener("change", () => {
   displayProducts(filtered);
 });
 
-/* SORT */
+//SORT
 lowBtn.onclick = () => {
   displayProducts([...products].sort((a,b)=>a.price-b.price));
 };
